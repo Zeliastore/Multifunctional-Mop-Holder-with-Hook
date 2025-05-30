@@ -67,21 +67,11 @@
 </head>
 <body>
 
-  <header>
-    <h1>Incenfragrant</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Beranda</a></li>
-        <li><a href="#">Produk</a></li>
-        <li><a href="#">Promo</a></li>
-        <li><a href="#">Kontak</a></li>
-      </ul>
-    </nav>
   </header>
 
   <main>
     <section class="product">
-      <img src="https://www.incenfragrant.com/cdn/shop/products/mop-holder.jpg" alt="Multifunctional Mop Holder with Hook" class="product-image">
+      <img src="https://cdn.hotishop.com/image/09cdaf7c7a4416827d8b4c7c72076168f9be5db5-700.jpeg" class="product-image">
       <div class="product-details">
         <h1>Multifunctional Mop Holder with Hook</h1>
         <p><strong>Harga:</strong> Rp 82.000</p>
