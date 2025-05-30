@@ -5,7 +5,7 @@
         <h1>Multifunctional Mop Holder with Hook</h1>
         <p><strong>Harga:</strong> Rp 82.000</p>
         <p><strong>Deskripsi:</strong> Gantungan multifungsi untuk sapu dan pel dengan desain hemat ruang. Dilengkapi dengan 6 kait dan 5 slot untuk menyimpan berbagai alat kebersihan Anda secara teratur dan mudah dijangkau.</p>
-        <a href="https://www.incenfragrant.com/products/multifunctional-mop-holder-with-hook-2" class="buy-button">Beli Sekarang</a>
+        <a href="https://nava.orderonline.id/multifunctional-mop-holder-with-hook" class="buy-button">Beli Sekarang</a>
       </div>
     </section>
 
