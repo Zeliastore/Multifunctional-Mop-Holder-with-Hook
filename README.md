@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +14,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             overflow-x: hidden;
+            line-height: 1.6;
         }
         
         .container {
@@ -429,7 +429,33 @@
             color: #e74c3c;
         }
         
-        /* Animations */
+        /* Touch-friendly buttons */
+        .cta-button, .timer-item, .stat-item, .feature-card, .testimonial-card {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .loading.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
         @keyframes slideInDown {
             from {
                 transform: translateY(-50px);
@@ -481,28 +507,92 @@
         
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 15px 0;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+                padding: 0 10px;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 15px;
             }
             
             .hero p {
                 font-size: 1.1rem;
+                margin-bottom: 30px;
+                padding: 0 10px;
             }
             
             .product-showcase {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 40px 0;
+            }
+            
+            .product-card {
+                padding: 20px;
+                margin: 0 10px;
+            }
+            
+            .product-card img {
+                height: 200px;
+            }
+            
+            .stats {
+                padding: 40px 0;
             }
             
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
+            .stat-item {
+                padding: 20px 15px;
             }
             
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            .price-banner {
+                padding: 30px 0;
+            }
+            
+            .price-original {
+                font-size: 1.4rem;
+            }
+            
+            .price-sale {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .price-save {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            
+            .countdown {
+                padding: 30px 0;
+            }
+            
+            .countdown h3 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
             }
             
             .timer {
@@ -510,16 +600,117 @@
             }
             
             .timer-item {
-                min-width: 60px;
-                padding: 15px;
+                min-width: 70px;
+                padding: 15px 10px;
             }
             
             .timer-number {
                 font-size: 2rem;
             }
             
-            .price-sale {
-                font-size: 2.5rem;
+            .timer-label {
+                font-size: 0.8rem;
+            }
+            
+            .features {
+                padding: 60px 0;
+            }
+            
+            .features h2 {
+                font-size: 2rem;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .feature-card {
+                padding: 25px 20px;
+                margin: 0 15px;
+            }
+            
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .feature-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+            
+            .feature-card p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .testimonials {
+                padding: 60px 0;
+            }
+            
+            .testimonials h2 {
+                font-size: 2rem;
+                margin-bottom: 40px;
+                padding: 0 20px;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 25px 20px;
+                margin: 0 15px;
+            }
+            
+            .testimonial-text {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .cta {
+                padding: 60px 0;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+                padding: 0 20px;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+                padding: 0 20px;
+            }
+            
+            .cta-button {
+                padding: 18px 40px;
+                font-size: 1.2rem;
+                margin: 0 20px;
+                display: block;
+                text-align: center;
+                max-width: calc(100% - 40px);
+            }
+            
+            .footer {
+                padding: 30px 0;
+            }
+            
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .footer-links a {
+                margin: 0;
             }
             
             .container {
@@ -528,17 +719,88 @@
         }
         
         @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .stats-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 20px;
+            }
+            
+            .price-sale {
+                font-size: 2.2rem;
+            }
+            
+            .timer-item {
+                min-width: 60px;
+                padding: 12px 8px;
+            }
+            
+            .timer-number {
+                font-size: 1.8rem;
+            }
+            
+            .features h2, .testimonials h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.8rem;
             }
             
             .cta-button {
-                padding: 15px 40px;
+                padding: 16px 30px;
                 font-size: 1.1rem;
+            }
+            
+            .feature-card, .testimonial-card {
+                margin: 0 10px;
+                padding: 20px 15px;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .price-sale {
+                font-size: 2rem;
+            }
+            
+            .timer {
+                gap: 8px;
+            }
+            
+            .timer-item {
+                min-width: 55px;
+                padding: 10px 6px;
+            }
+            
+            .timer-number {
+                font-size: 1.6rem;
+            }
+            
+            .cta-button {
+                font-size: 1rem;
+                padding: 14px 25px;
             }
         }
     </style>
@@ -574,7 +836,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats loading">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -787,4 +1049,56 @@
         // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin:
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loaded');
+                }
+            });
+        }, observerOptions);
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounters();
+            updateCountdown();
+            
+            // Update counters every 10 seconds
+            setInterval(updateCounters, 10000);
+            
+            // Observe loading elements
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach(el => observer.observe(el));
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Prevent zoom on double tap (iOS)
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+        
+        // Add loading animation delay for sections
+        setTimeout(() => {
+            const sections = document.querySelectorAll('.features, .testimonials');
+            sections.forEach(section => section.classList.add('loading'));
+        }, 500);
