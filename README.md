@@ -1,1104 +1,357 @@
+ZELIASTORE.ID
+<!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multifunctional Mop Holder - Solusi Rapi Rumah Anda!</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header Section */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-        }
-        
-        .header h1 {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 2rem;
-            font-weight: 700;
-            animation: slideInDown 1s ease-out;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #ffd700);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease-out 0.5s both;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            animation: slideInUp 1s ease-out 0.7s both;
-            opacity: 0.9;
-        }
-        
-        .product-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-            animation: slideInUp 1s ease-out 0.9s both;
-        }
-        
-        .product-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: translateY(0);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .product-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        
-        .product-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 60px 0;
-            backdrop-filter: blur(10px);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .stat-item {
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
-            color: white;
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Price Banner */
-        .price-banner {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .price-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.1) 10px,
-                rgba(255, 255, 255, 0.1) 20px
-            );
-            animation: slide 20s linear infinite;
-        }
-        
-        .price-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .price-original {
-            font-size: 1.8rem;
-            text-decoration: line-through;
-            opacity: 0.7;
-            margin-bottom: 10px;
-        }
-        
-        .price-sale {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 15px;
-            animation: pulse 2s infinite;
-        }
-        
-        .price-save {
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 25px;
-            margin-bottom: 20px;
-        }
-        
-        /* Countdown Timer */
-        .countdown {
-            background: #2c3e50;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .countdown h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #e74c3c;
-        }
-        
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .timer-item {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            padding: 20px;
-            border-radius: 15px;
-            min-width: 80px;
-            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
-        }
-        
-        .timer-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ffd700;
-        }
-        
-        .timer-label {
-            font-size: 0.9rem;
-            margin-top: 5px;
-            opacity: 0.8;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #2c3e50;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border: 2px solid #667eea;
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: white;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .feature-card p {
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .testimonial-stars {
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #ffd700;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-        }
-        
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #e74c3c;
-        }
-        
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 20px 60px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
-            animation: pulse 2s infinite;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(231, 76, 60, 0.6);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #34495e;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-links {
-            margin-bottom: 20px;
-        }
-        
-        .footer-links a {
-            color: #ecf0f1;
-            text-decoration: none;
-            margin: 0 20px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: #e74c3c;
-        }
-        
-        /* Touch-friendly buttons */
-        .cta-button, .timer-item, .stat-item, .feature-card, .testimonial-card {
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Loading animation */
-        .loading {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .loading.loaded {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideInUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-        
-        @keyframes slide {
-            0% {
-                transform: translateX(-50%);
-            }
-            100% {
-                transform: translateX(50%);
-            }
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .header {
-                padding: 15px 0;
-            }
-            
-            .header h1 {
-                font-size: 1.5rem;
-                padding: 0 10px;
-            }
-            
-            .hero {
-                padding: 40px 0;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-                line-height: 1.2;
-                margin-bottom: 15px;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
-                padding: 0 10px;
-            }
-            
-            .product-showcase {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin: 40px 0;
-            }
-            
-            .product-card {
-                padding: 20px;
-                margin: 0 10px;
-            }
-            
-            .product-card img {
-                height: 200px;
-            }
-            
-            .stats {
-                padding: 40px 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .stat-item {
-                padding: 20px 15px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .stat-label {
-                font-size: 0.9rem;
-            }
-            
-            .price-banner {
-                padding: 30px 0;
-            }
-            
-            .price-original {
-                font-size: 1.4rem;
-            }
-            
-            .price-sale {
-                font-size: 2.5rem;
-                margin-bottom: 10px;
-            }
-            
-            .price-save {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-            
-            .countdown {
-                padding: 30px 0;
-            }
-            
-            .countdown h3 {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-            }
-            
-            .timer {
-                gap: 10px;
-            }
-            
-            .timer-item {
-                min-width: 70px;
-                padding: 15px 10px;
-            }
-            
-            .timer-number {
-                font-size: 2rem;
-            }
-            
-            .timer-label {
-                font-size: 0.8rem;
-            }
-            
-            .features {
-                padding: 60px 0;
-            }
-            
-            .features h2 {
-                font-size: 2rem;
-                margin-bottom: 40px;
-                padding: 0 20px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .feature-card {
-                padding: 25px 20px;
-                margin: 0 15px;
-            }
-            
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-            
-            .feature-card h3 {
-                font-size: 1.3rem;
-                margin-bottom: 12px;
-            }
-            
-            .feature-card p {
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .testimonials {
-                padding: 60px 0;
-            }
-            
-            .testimonials h2 {
-                font-size: 2rem;
-                margin-bottom: 40px;
-                padding: 0 20px;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .testimonial-card {
-                padding: 25px 20px;
-                margin: 0 15px;
-            }
-            
-            .testimonial-text {
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-            
-            .cta {
-                padding: 60px 0;
-            }
-            
-            .cta h2 {
-                font-size: 2rem;
-                margin-bottom: 15px;
-                padding: 0 20px;
-            }
-            
-            .cta p {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
-                padding: 0 20px;
-            }
-            
-            .cta-button {
-                padding: 18px 40px;
-                font-size: 1.2rem;
-                margin: 0 20px;
-                display: block;
-                text-align: center;
-                max-width: calc(100% - 40px);
-            }
-            
-            .footer {
-                padding: 30px 0;
-            }
-            
-            .footer-links {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-                margin-bottom: 20px;
-            }
-            
-            .footer-links a {
-                margin: 0;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.3rem;
-            }
-            
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .stat-item {
-                padding: 20px;
-            }
-            
-            .price-sale {
-                font-size: 2.2rem;
-            }
-            
-            .timer-item {
-                min-width: 60px;
-                padding: 12px 8px;
-            }
-            
-            .timer-number {
-                font-size: 1.8rem;
-            }
-            
-            .features h2, .testimonials h2 {
-                font-size: 1.8rem;
-            }
-            
-            .cta h2 {
-                font-size: 1.8rem;
-            }
-            
-            .cta-button {
-                padding: 16px 30px;
-                font-size: 1.1rem;
-            }
-            
-            .feature-card, .testimonial-card {
-                margin: 0 10px;
-                padding: 20px 15px;
-            }
-            
-            .container {
-                padding: 0 10px;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .hero h2 {
-                font-size: 1.6rem;
-            }
-            
-            .price-sale {
-                font-size: 2rem;
-            }
-            
-            .timer {
-                gap: 8px;
-            }
-            
-            .timer-item {
-                min-width: 55px;
-                padding: 10px 6px;
-            }
-            
-            .timer-number {
-                font-size: 1.6rem;
-            }
-            
-            .cta-button {
-                font-size: 1rem;
-                padding: 14px 25px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multifunctional Mop Holder with Hook - Produk Premium</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: #f9fafb;
+    color: #222;
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  header p.tagline {
+    margin: 0.5rem 0 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .product-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .product-images img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .product-images img:hover {
+    transform: scale(1.05);
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+  section h2 {
+    font-weight: 700;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #50e3c2;
+    display: inline-block;
+    padding-bottom: 0.2rem;
+  }
+  ul.features-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul.features-list li {
+    background: url('data:image/svg+xml;utf8,<svg fill="%234a90e2" height="14" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.2l-3.5-3.5L4 14l5 5 12-12-1.5-1.5z"/></svg>') no-repeat left center;
+    padding-left: 24px;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+  }
+
+  .usage-steps {
+    counter-reset: step-counter;
+  }
+  .usage-steps li {
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    position: relative;
+  }
+  .usage-steps li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #50e3c2;
+    color: white;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1rem;
+  }
+  .testimonial-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+    padding: 1rem;
+    font-style: italic;
+  }
+  .testimonial-card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+    color: #4a90e2;
+  }
+
+  .urgency {
+    background: #ffe4e1;
+    border: 2px solid #ff3b3b;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+    color: #d80000;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .dynamic-counters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .counter {
+    background: #4a90e2;
+    color: white;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+  }
+
+  .countdown-timer {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #d80000;
+    letter-spacing: 2px;
+  }
+
+  .price-banner {
+    background: #50e3c2;
+    color: #033;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(80,227,194,0.5);
+  }
+  .price-banner del {
+    color: #033;
+    opacity: 0.6;
+    margin-left: 1rem;
+    font-weight: 500;
+  }
+
+  .cta-button {
+    display: block;
+    background: #4a90e2;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.3rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    max-width: 320px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 5px 15px rgba(74,144,226,0.6);
+    transition: background 0.3s ease;
+  }
+  .cta-button:hover {
+    background: #357abd;
+  }
+
+  footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .dynamic-counters {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .price-banner {
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <h1>🏠 MULTIFUNCTIONAL MOP HOLDER</h1>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Rapikan Rumah Anda Dengan Gaya!</h2>
-                <p>Solusi pintar untuk menyimpan semua alat kebersihan Anda dalam satu tempat yang rapi dan mudah dijangkau</p>
-                
-                <div class="product-showcase">
-                    <div class="product-card">
-                        <img src="https://cdn.fastcdnshop.com/image/09cdaf7c7a4416827d8b4c7c72076168f9be5db5-700.jpeg" alt="Multifunctional Mop Holder">
-                    </div>
-                    <div class="product-card">
-                        <img src="https://cdn.fastcdnshop.com/image/e151475271efeb413ce032d5df1cd9f414964f26.gif" alt="Mop Holder Animation">
-                    </div>
-                    <div class="product-card">
-                        <img src="https://cdn.fastcdnshop.com/image/512cf98eeb7f0178c5d44d45a2321b4c11219464.webp" alt="Mop Holder Usage">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<header>
+  <h1>Multifunctional Mop Holder with Hook</h1>
+  <p class="tagline">Solusi Praktis dan Rapi untuk Alat Kebersihan Anda!</p>
+</header>
 
-    <!-- Stats Section -->
-    <section class="stats loading">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="viewers">1,247</div>
-                    <div class="stat-label">Orang sedang melihat</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="sold">523</div>
-                    <div class="stat-label">Terjual hari ini</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stock">47</div>
-                    <div class="stat-label">Stok tersisa</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9⭐</div>
-                    <div class="stat-label">Rating pelanggan</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<main>
+  <div class="product-images" aria-label="Gambar produk">
+    <img src="https://cdn.fastcdnshop.com/image/09cdaf7c7a4416827d8b4c7c72076168f9be5db5-700.jpeg" alt="Multifunctional Mop Holder - foto utama" />
+    <img src="https://cdn.fastcdnshop.com/image/e151475271efeb413ce032d5df1cd9f414964f26.gif" alt="Animasi penggunaan Multifunctional Mop Holder" />
+    <img src="https://cdn.fastcdnshop.com/image/512cf98eeb7f0178c5d44d45a2321b4c11219464.webp" alt="Mop holder dalam berbagai sudut" />
+    <img src="https://cdn.fastcdnshop.com/image/ae53b44079e4376ce12357b55acbdebb570fa50d.webp" alt="Detail hook Multifunctional Mop Holder" />
+  </div>
 
-    <!-- Price Banner -->
-    <section class="price-banner">
-        <div class="container">
-            <div class="price-content">
-                <div class="price-original">Harga Normal: Rp 247.500</div>
-                <div class="price-sale">HARGA SPESIAL: Rp 165.000</div>
-                <div class="price-save">💰 HEMAT Rp 82.500!</div>
-                <p>⚡ Penawaran terbatas! Buruan sebelum kehabisan stok!</p>
-            </div>
-        </div>
-    </section>
+  <section aria-labelledby="desc-heading">
+    <h2 id="desc-heading">Deskripsi Produk</h2>
+    <p>
+      Multifunctional Mop Holder with Hook adalah solusi inovatif untuk menjaga kebersihan dan kerapihan alat-alat rumah tangga Anda. Dengan desain ergonomis dan bahan berkualitas, produk ini memudahkan Anda menyimpan sapu, pel, dan alat kebersihan lain secara rapi tanpa ribet.
+    </p>
+  </section>
 
-    <!-- Countdown Timer -->
-    <section class="countdown">
-        <div class="container">
-            <h3>⏰ PROMO BERAKHIR DALAM:</h3>
-            <div class="timer">
-                <div class="timer-item">
-                    <div class="timer-number" id="hours">12</div>
-                    <div class="timer-label">JAM</div>
-                </div>
-                <div class="timer-item">
-                    <div class="timer-number" id="minutes">34</div>
-                    <div class="timer-label">MENIT</div>
-                </div>
-                <div class="timer-item">
-                    <div class="timer-number" id="seconds">56</div>
-                    <div class="timer-label">DETIK</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section aria-labelledby="features-heading">
+    <h2 id="features-heading">Fitur Utama</h2>
+    <ul class="features-list">
+      <li>Desain kuat dan tahan lama, dapat menahan berbagai jenis alat kebersihan</li>
+      <li>Hook tambahan untuk gantungan kain lap atau alat kecil</li>
+      <li>Mudah dipasang tanpa perlu alat khusus</li>
+      <li>Anti slip dan tidak merusak dinding</li>
+      <li>Material ramah lingkungan dan mudah dibersihkan</li>
+    </ul>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Mengapa Memilih Produk Kami?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Mudah Dipasang</h3>
-                    <p>Tidak perlu bor atau paku! Sistem perekat super kuat yang dapat menahan beban hingga 5kg. Instalasi hanya butuh 30 detik!</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💧</div>
-                    <h3>Anti Air & Tahan Lama</h3>
-                    <p>Material ABS berkualitas tinggi yang tahan air, anti jamur, dan tidak mudah rusak. Cocok untuk kamar mandi yang lembab.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Desain Multi-fungsi</h3>
-                    <p>6 hook + 5 slot yang dapat menampung pel, sapu, sikat, handuk, dan berbagai alat kebersihan lainnya dalam satu tempat.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏠</div>
-                    <h3>Hemat Ruang</h3>
-                    <p>Desain kompak yang menempel di dinding, membuat ruang Anda lebih rapi dan terorganisir. Cocok untuk rumah minimalis.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Mudah Dibersihkan</h3>
-                    <p>Permukaan halus yang mudah dibersihkan dengan lap basah. Tidak menyerap debu atau kotoran, selalu terlihat bersih.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Desain Elegan</h3>
-                    <p>Tampilan modern dan minimalis yang cocok dengan berbagai style interior. Tersedia dalam warna netral yang cantik.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section aria-labelledby="usage-heading">
+    <h2 id="usage-heading">Cara Penggunaan</h2>
+    <ol class="usage-steps">
+      <li>Pasang holder pada dinding di tempat yang diinginkan.</li>
+      <li>Letakkan sapu atau pel di bagian penjepit yang tersedia.</li>
+      <li>Gunakan hook tambahan untuk menggantung alat kecil lainnya.</li>
+      <li>Nikmati ruang yang lebih rapi dan bersih.</li>
+    </ol>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Apa Kata Pelanggan Kami?</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <div class="testimonial-text">"Bener-bener game changer! Kamar mandi jadi rapi banget. Pemasangannya mudah dan kuat banget, udah 6 bulan masih kuat nahan pel sama sapu."</div>
-                    <div class="testimonial-author">- Sari, Jakarta</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <div class="testimonial-text">"Kualitas bagus banget! Materialnya kokoh, ga mudah patah. Rumah jadi lebih terorganisir dan ga berantakan lagi. Puas banget dengan pembelian ini!"</div>
-                    <div class="testimonial-author">- Budi, Surabaya</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <div class="testimonial-text">"Praktis banget! Sekarang semua alat kebersihan ada tempatnya. Yang paling suka, ga perlu bor dinding. Recommended banget buat yang tinggal di apartemen."</div>
-                    <div class="testimonial-author">- Maya, Bandung</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                    <div class="testimonial-text">"Harga terjangkau tapi kualitas premium! Sudah pesen 2 lagi buat kamar mandi yang lain. Seller fast respon dan pengiriman cepat. Top!"</div>
-                    <div class="testimonial-author">- Andi, Medan</div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section aria-labelledby="testi-heading">
+    <h2 id="testi-heading">Testimoni Pelanggan</h2>
+    <div class="testimonials">
+      <div class="testimonial-card" role="article" aria-label="Testimoni dari Ibu Rini">
+        <strong>Ibu Rini, 34 tahun</strong>
+        <p>"Holder ini benar-benar memudahkan saya menyimpan alat kebersihan. Rumah jadi lebih rapi dan bersih. Pemasangannya juga mudah."</p>
+      </div>
+      <div class="testimonial-card" role="article" aria-label="Testimoni dari Mas Arif">
+        <strong>Mas Arif, 28 tahun</strong>
+        <p>"Bahan holder kuat dan hook-nya sangat membantu untuk gantung lap. Worth it banget buat harga segini."</p>
+      </div>
+      <div class="testimonial-card" role="article" aria-label="Testimoni dari Bu Dewi">
+        <strong>Bu Dewi, 39 tahun</strong>
+        <p>"Saya suka desainnya yang simpel dan tidak makan tempat. Kini alat kebersihan saya tidak berserakan lagi."</p>
+      </div>
+      <div class="testimonial-card" role="article" aria-label="Testimoni dari Pak Joko">
+        <strong>Pak Joko, 42 tahun</strong>
+        <p>"Pengiriman cepat dan produk sesuai gambar. Ini sangat membantu saya mengorganisir peralatan rumah."</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>🔥 JANGAN SAMPAI TERLEWAT!</h2>
-            <p>Stok terbatas! Ribuan orang sudah merasakan manfaatnya. Giliran Anda sekarang!</p>
-            <a href="https://nava.orderonline.id/multifunctional-mop-holder-with-hook" class="cta-button" target="_blank">
-                🛒 PESAN SEKARANG - Rp 165.000
-            </a>
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">
-                ✅ Gratis Ongkir Seluruh Indonesia<br>
-                ✅ Garansi 30 Hari Uang Kembali<br>
-                ✅ Customer Service 24/7
-            </p>
-        </div>
-    </section>
+  <div class="urgency" role="alert" aria-live="assertive" id="urgency">
+    Hanya tersisa <span id="stock">15</span> stok! Promo berakhir dalam <span id="countdown">00:15:00</span> menit!
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-links">
-                <a href="https://nava.orderonline.id/multifunctional-mop-holder-with-hook" target="_blank">Order Online</a>
-                <a href="https://s.shopee.co.id/yElC1QgM" target="_blank">Shopee Store</a>
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Kembali ke Atas</a>
-            </div>
-            <p>&copy; 2025 Multifunctional Mop Holder. Semua hak dilindungi.</p>
-            <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 10px;">
-                Dapatkan rumah yang lebih rapi dan terorganisir dengan solusi penyimpanan terbaik!
-            </p>
-        </div>
-    </footer>
+  <div class="dynamic-counters" aria-label="Statistik pembelian">
+    <div class="counter" aria-live="polite">Pengunjung sekarang: <span id="viewers">0</span></div>
+    <div class="counter" aria-live="polite">Stok tersedia: <span id="stock-counter">15</span></div>
+  </div>
 
-    <script>
-        // Dynamic Counters
-        function updateCounters() {
-            const viewers = document.getElementById('viewers');
-            const sold = document.getElementById('sold');
-            const stock = document.getElementById('stock');
-            
-            // Simulate dynamic viewers
-            const baseViewers = 1200;
-            const currentViewers = baseViewers + Math.floor(Math.random() * 100);
-            viewers.textContent = currentViewers.toLocaleString();
-            
-            // Simulate sales
-            const baseSold = 500;
-            const currentSold = baseSold + Math.floor(Math.random() * 50);
-            sold.textContent = currentSold.toLocaleString();
-            
-            // Simulate decreasing stock
-            const baseStock = 50;
-            const currentStock = Math.max(10, baseStock - Math.floor(Math.random() * 15));
-            stock.textContent = currentStock;
-            
-            // Change stock color if low
-            if (currentStock < 20) {
-                stock.style.color = '#e74c3c';
-                stock.style.animation = 'pulse 1s infinite';
-            }
-        }
-        
-        // Countdown Timer
-        function updateCountdown() {
-            const hours = document.getElementById('hours');
-            const minutes = document.getElementById('minutes');
-            const seconds = document.getElementById('seconds');
-            
-            let totalSeconds = 12 * 3600 + 34 * 60 + 56; // Starting time
-            
-            const timer = setInterval(() => {
-                const h = Math.floor(totalSeconds / 3600);
-                const m = Math.floor((totalSeconds % 3600) / 60);
-                const s = totalSeconds % 60;
-                
-                hours.textContent = h.toString().padStart(2, '0');
-                minutes.textContent = m.toString().padStart(2, '0');
-                seconds.textContent = s.toString().padStart(2, '0');
-                
-                if (totalSeconds <= 0) {
-                    // Reset timer when it reaches 0
-                    totalSeconds = 24 * 3600; // Reset to 24 hours
-                } else {
-                    totalSeconds--;
-                }
-            }, 1000);
-        }
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
-                }
-            });
-        }, observerOptions);
-        
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCounters();
-            updateCountdown();
-            
-            // Update counters every 10 seconds
-            setInterval(updateCounters, 10000);
-            
-            // Observe loading elements
-            const loadingElements = document.querySelectorAll('.loading');
-            loadingElements.forEach(el => observer.observe(el));
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        });
-        
-        // Prevent zoom on double tap (iOS)
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-        
-        // Add loading animation delay for sections
-        setTimeout(() => {
-            const sections = document.querySelectorAll('.features, .testimonials');
-            sections.forEach(section => section.classList.add('loading'));
-        }, 500);
+  <div class="price-banner" aria-label="Harga produk">
+    Harga Normal: <del>Rp247.500</del> &nbsp;&nbsp;&nbsp;
+    Harga Spesial: <span style="font-size: 1.5rem; color:#033;">Rp165.000</span>
+  </div>
+
+  <a href="https://wa.me/+6287886635076" target="_blank" rel="noopener" class="cta-button" role="button" aria-label="Pesan Sekarang via WhatsApp">PESAN SEKARANG</a>
+
+</main>
+
+<footer>
+  &copy; 2025 Multifunctional Mop Holder Indonesia
+</footer>
+
+<script>
+  // Dynamic counters: viewers and stock
+  let viewers = 20 + Math.floor(Math.random() * 50); // random between 20-70
+  let stock = 15;
+  const viewersEl = document.getElementById('viewers');
+  const stockEl = document.getElementById('stock');
+  const stockCounterEl = document.getElementById('stock-counter');
+  const urgencyStockEl = document.getElementById('stock');
+
+  function updateCounters() {
+    // Simulate viewers fluctuation
+    viewers += Math.floor(Math.random() * 5 - 2);
+    if(viewers < 10) viewers = 10;
+    if(viewers > 100) viewers = 100;
+    viewersEl.textContent = viewers;
+
+    // Stock decreases slowly over time randomly
+    if(stock > 0 && Math.random() < 0.1) {
+      stock--;
+      stockEl.textContent = stock;
+      stockCounterEl.textContent = stock;
+    }
+  }
+  setInterval(updateCounters, 4000);
+  updateCounters();
+
+  // Countdown Timer (15 minutes)
+  const countdownEl = document.getElementById('countdown');
+  let countdownTime = 15 * 60; // 15 minutes in seconds
+
+  function updateCountdown() {
+    if(countdownTime <= 0) {
+      countdownEl.textContent = "Waktu habis!";
+      clearInterval(countdownInterval);
+      return;
+    }
+    let minutes = Math.floor(countdownTime / 60);
+    let seconds = countdownTime % 60;
+    countdownEl.textContent = `00:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    countdownTime--;
+  }
+  const countdownInterval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  // Redirect tab to form order on CTA click is via link directly to WhatsApp
+</script>
+
+</body>
+</html>
