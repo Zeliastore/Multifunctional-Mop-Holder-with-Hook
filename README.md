@@ -1,8 +1,5 @@
 WELCOME TO ZELIASTORE.ID AND HAPPY SHOPPING
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>🔥 Multifunctional Mop Holder - Solusi Praktis Rumah Bersih!</title>
     <meta name="description" content="Gantungan Sapu & Pel Multifungsi dengan 6 Hook - Hemat Tempat, Tahan Lama, Mudah Dipasang. PROMO TERBATAS!">
     
