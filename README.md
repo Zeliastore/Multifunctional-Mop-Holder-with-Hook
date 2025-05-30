@@ -1,13 +1,4 @@
-# Multifunctional-Mop-Holder-with-Hook
-
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="canonical" href="https://www.incenfragrant.com/products/multifunctional-mop-holder-with-hook-2">
-    
-            <link rel="preconnect" href="https://static.hotishop.com">
+ <link rel="preconnect" href="https://static.hotishop.com">
         
         <title>💖 Multifunctional Mop Holder with Hook</title>
                 <meta property="product:brand" content="">
